@@ -1,13 +1,13 @@
-import Person from './Person'
 
-const Persons = ({ persons }) => {
-  return (
-    <div>
-      {persons.map(person =>
-        <Person key={person.id} person={person} />
-      )}
-    </div>
-  )
-}
+const Persons = ({ persons, deletePerson }) => (
+  <div>
+    {persons.map(person => (
+      <div key={person.id}>
+        {person.name} {person.number}
+        <button onClick={() => deletePerson(person.id)}>delete</button>
+      </div>
+    ))}
+  </div>
+)
 
 export default Persons
